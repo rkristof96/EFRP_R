@@ -29,7 +29,7 @@ all_correlations <- function(){
   
   sdate <- (param()[["Date"]])
   
-  sdate <-as.Date(as.vector(as.matrix(sdate)))[(windowsize+correllag + 1):dim(sdate)[1]]
+  sdate <-as.Date(as.vector(as.matrix(sdate)))[(window_size+correl_lag + 1):dim(sdate)[1]]
   # unfortunately, sdate is in tibble format wich is not compatible with matrix format, but Date is
   # to convert sdate to date a vector: tibble->matrix->vector->Date
   # the rolling correlation coefficients are assigned to the last day of the window
